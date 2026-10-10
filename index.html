@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10060e">
+  <meta name="description" content="Entre para o canal VIP e confira as novidades exclusivas.">
+  <title>VIP Exclusivo</title>
+  <style>
+    :root { --pink:#ff2d8d; --hot:#ff4eb8; --gold:#ffd58a; --bg:#10060e; }
+    * { box-sizing:border-box; }
+    body {
+      margin:0; min-height:100vh; color:#fff; font-family:Arial,Helvetica,sans-serif;
+      background:
+        radial-gradient(ellipse at 50% 0%, rgba(255,45,141,.28), transparent 42%),
+        radial-gradient(ellipse at 100% 80%, rgba(115,14,79,.25), transparent 40%),
+        linear-gradient(155deg,#210b1a 0%,#10060e 55%,#08050a 100%);
+      display:flex; justify-content:center; overflow-x:hidden;
+    }
+    body:before {
+      content:""; position:fixed; inset:0; pointer-events:none; opacity:.18;
+      background-image:radial-gradient(rgba(255,255,255,.5) .7px,transparent .7px);
+      background-size:22px 22px;
+    }
+    main { position:relative; width:min(100%,720px); padding:38px 22px 34px; text-align:center; }
+    .pill {
+      display:inline-flex; align-items:center; gap:8px; padding:9px 14px;
+      border:1px solid rgba(255,78,184,.55); border-radius:99px;
+      background:rgba(255,45,141,.10); color:#ffc5e2; font-size:11px;
+      font-weight:800; letter-spacing:.17em;
+    }
+    .lockup {
+      width:112px;height:112px;margin:30px auto 25px;border-radius:50%;
+      display:grid;place-items:center;
+      background:linear-gradient(145deg,#ff64bd,#e40070);
+      box-shadow:0 0 26px rgba(255,45,141,.35), inset 0 2px 10px rgba(255,255,255,.3);
+      border:2px solid rgba(255,255,255,.42);
+    }
+    .lockup svg { width:55px;height:55px;fill:#fff; }
+    .eyebrow { margin:0 0 12px;color:var(--gold);font-size:12px;font-weight:800;letter-spacing:.24em; }
+    h1 { margin:0; font-size:clamp(38px,8.5vw,66px);line-height:.98;letter-spacing:-.045em;font-weight:950; }
+    h1 span { display:block;color:var(--hot);margin-top:9px;text-shadow:0 0 28px rgba(255,45,141,.28); }
+    .sub { max-width:540px;margin:22px auto 28px;color:#f2dce8;font-size:17px;line-height:1.55; }
+    .sub strong { color:#fff; }
+    .cta {
+      display:flex;align-items:center;justify-content:center;gap:12px;
+      width:100%;max-width:550px;min-height:76px;margin:0 auto;padding:18px 22px;
+      border-radius:15px;border:1px solid #ff8bc8;color:#fff;text-decoration:none;
+      font-weight:900;font-size:clamp(17px,4vw,22px);letter-spacing:.035em;
+      background:linear-gradient(100deg,#ff2386,#df006b 58%,#a80059);
+      box-shadow:0 10px 35px rgba(255,0,119,.24),inset 0 1px rgba(255,255,255,.3);
+      transition:transform .18s ease,filter .18s ease;
+    }
+    .cta:hover { transform:translateY(-2px);filter:brightness(1.1); }
+    .cta:focus-visible,.fallback a:focus-visible { outline:3px solid #fff;outline-offset:4px; }
+    .cta svg { width:30px;height:30px;fill:white;flex:0 0 auto; }
+    .trust { margin:15px auto 0;color:#cba8bc;font-size:12px; }
+    .status { margin:27px auto 0;display:flex;align-items:center;justify-content:center;gap:12px;color:#f3dce9;font-size:15px;line-height:1.5; }
+    .spinner { width:27px;height:27px;border:3px solid rgba(255,78,184,.2);border-top-color:#ff4eb8;border-radius:50%;animation:spin 1s linear infinite;flex:0 0 auto; }
+    @keyframes spin { to { transform:rotate(360deg); } }
+    .fallback { margin:18px 0 0;color:#d8b9cb;font-size:14px; }
+    .fallback a { color:#ff78bf;font-weight:800;text-underline-offset:4px; }
+    .divider { height:1px;max-width:520px;margin:35px auto 26px;background:linear-gradient(90deg,transparent,rgba(255,78,184,.6),transparent); }
+    .features { display:grid;grid-template-columns:repeat(3,1fr);gap:12px; }
+    .feature { padding:17px 8px;border:1px solid rgba(255,78,184,.2);border-radius:13px;background:rgba(255,255,255,.035); }
+    .icon { font-size:24px;margin-bottom:9px; }
+    .feature strong { display:block;font-size:13px;margin-bottom:5px; }
+    .feature small { color:#cba8bc;font-size:11px;line-height:1.4; }
+    .foot { margin:29px 0 0;color:#9f7b91;font-size:10px;letter-spacing:.18em; }
+    @media(max-width:420px) {
+      main{padding:28px 17px 25px}.lockup{width:94px;height:94px;margin:25px auto}
+      .lockup svg{width:46px;height:46px}.sub{font-size:15px}
+      .cta{min-height:68px;padding:15px 12px}.features{gap:7px}
+      .feature{padding:14px 5px}.feature strong{font-size:12px}.feature small{font-size:10px}
+    }
+    @media(prefers-reduced-motion:reduce){.spinner{animation:none}.cta{transition:none}}
+  </style>
+</head>
+<body>
+  <main>
+    <div class="pill">✦ CONTEÚDO VIP · ACESSO EXCLUSIVO ✦</div>
+    <div class="lockup" aria-hidden="true">
+      <svg viewBox="0 0 24 24"><path d="M21.8 3.2 18.5 20c-.25 1.19-.96 1.48-1.94.92l-5.36-3.95-2.59 2.49c-.29.29-.53.53-1.09.53l.39-5.46 9.94-8.98c.43-.39-.09-.61-.67-.22L4.9 13.08-.32 11.45c-1.14-.36-1.16-1.14.24-1.69L20.35 1.9c.95-.35 1.78.23 1.45 1.3Z" transform="translate(1 1) scale(.92)"/></svg>
+    </div>
+    <p class="eyebrow">VOCÊ ENCONTROU O ACESSO</p>
+    <h1>SEU LADO <span>VIP COMEÇA AQUI</span></h1>
+    <p class="sub">Entre no nosso espaço exclusivo e fique por dentro das <strong>novidades, atualizações e conteúdos especiais</strong> publicados no canal.</p>
+
+    <a class="cta" id="join" href="https://t.me/+BELhxEQZF9BlOTdh">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.8 3.2 18.5 20c-.25 1.19-.96 1.48-1.94.92l-5.36-3.95-2.59 2.49c-.29.29-.53.53-1.09.53l.39-5.46 9.94-8.98c.43-.39-.09-.61-.67-.22L4.9 13.08-.32 11.45c-1.14-.36-1.16-1.14.24-1.69L20.35 1.9c.95-.35 1.78.23 1.45 1.3Z" transform="translate(1 1) scale(.92)"/></svg>
+      ENTRAR NO CANAL VIP
+      <span aria-hidden="true">➜</span>
+    </a>
+    <p class="trust">🔒 Acesso pelo Telegram · Abra o canal com um toque</p>
+
+    <div class="status" id="status">
+      <span class="spinner" aria-hidden="true"></span>
+      <span>Redirecionando em <strong id="seconds" style="color:#ff78bf">5 segundos</strong>…</span>
+    </div>
+    <p class="fallback">Não abriu automaticamente? <a href="https://t.me/+BELhxEQZF9BlOTdh">Toque aqui para entrar</a>.</p>
+
+    <div class="divider"></div>
+    <section class="features" aria-label="Destaques do canal">
+      <div class="feature"><div class="icon">💎</div><strong>EXCLUSIVO</strong><small>Novidades no canal VIP</small></div>
+      <div class="feature"><div class="icon">⚡</div><strong>EM PRIMEIRA MÃO</strong><small>Atualizações sem demora</small></div>
+      <div class="feature"><div class="icon">🔔</div><strong>FIQUE POR DENTRO</strong><small>Acompanhe as publicações</small></div>
+    </section>
+    <p class="foot">CONTEÚDO DESTINADO A ADULTOS · 18+</p>
+  </main>
+  <script>
+    (function () {
+      const destination = "https://t.me/+BELhxEQZF9BlOTdh";
+      let remaining = 5;
+      const seconds = document.getElementById("seconds");
+      const timer = window.setInterval(function () {
+        remaining -= 1;
+        if (remaining <= 0) {
+          window.clearInterval(timer);
+          window.location.href = destination;
+          return;
+        }
+        seconds.textContent = remaining + (remaining === 1 ? " segundo" : " segundos");
+      }, 1000);
+    })();
+  </script>
+</body>
+</html>
