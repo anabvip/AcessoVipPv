@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#09070b">
+  <meta name="description" content="Conheça nossa comunidade exclusiva para maiores de 18 anos.">
+  <title>Comunidade Exclusiva +18</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #09070b;
+      --panel: #151018;
+      --text: #fff7fb;
+      --muted: #c8b9c6;
+      --red: #ff315c;
+      --pink: #ff4da6;
+      --line: rgba(255,255,255,.10);
+    }
+    * { box-sizing: border-box; }
+    html { min-height: 100%; background: var(--bg); }
+    body {
+      margin: 0; min-height: 100vh; min-height: 100svh;
+      display: grid; place-items: center; padding: 22px 16px;
+      background:
+        radial-gradient(ellipse at 50% 0%, rgba(255,49,92,.20), transparent 48%),
+        radial-gradient(ellipse at 100% 75%, rgba(255,77,166,.10), transparent 42%),
+        var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    .wrap { width: min(100%, 480px); }
+    .card {
+      position: relative; overflow: hidden; padding: 30px 22px 24px;
+      border: 1px solid rgba(255,77,166,.25); border-radius: 25px;
+      background: linear-gradient(155deg, rgba(31,21,32,.97), rgba(13,10,16,.98));
+      box-shadow: 0 22px 80px rgba(0,0,0,.48), 0 0 35px rgba(255,49,92,.10);
+      text-align: center;
+    }
+    .card::before {
+      content: ""; position: absolute; inset: 0 18% auto; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--pink), transparent);
+    }
+    .tag {
+      display: inline-flex; align-items: center; gap: 7px; padding: 7px 12px;
+      border: 1px solid rgba(255,77,166,.35); border-radius: 999px;
+      color: #ffc0dc; background: rgba(255,77,166,.08);
+      font-size: 11px; font-weight: 800; letter-spacing: .13em;
+    }
+    .symbol {
+      width: 76px; height: 76px; margin: 22px auto 18px; display: grid; place-items: center;
+      border-radius: 22px; font-size: 34px;
+      background: linear-gradient(145deg, rgba(255,49,92,.22), rgba(255,77,166,.10));
+      border: 1px solid rgba(255,77,166,.35);
+      box-shadow: 0 0 32px rgba(255,49,92,.16);
+    }
+    h1 {
+      margin: 0 auto 13px; max-width: 390px;
+      font-size: clamp(27px, 8vw, 38px); line-height: 1.08;
+      letter-spacing: -.045em; font-weight: 900;
+    }
+    h1 .accent {
+      color: var(--pink);
+      text-shadow: 0 0 22px rgba(255,77,166,.28);
+    }
+    .intro { margin: 0 auto; max-width: 360px; color: var(--muted); font-size: 15px; line-height: 1.6; }
+    .benefits {
+      display: grid; gap: 11px; margin: 24px 0; padding: 17px;
+      border: 1px solid var(--line); border-radius: 17px;
+      background: rgba(255,255,255,.025); text-align: left;
+    }
+    .benefit { display: flex; gap: 10px; align-items: flex-start; color: #f4eaf1; font-size: 14px; line-height: 1.4; }
+    .check { color: #ff78b8; font-weight: 900; }
+    .cta {
+      width: 100%; min-height: 58px; display: flex; align-items: center; justify-content: center;
+      gap: 10px; padding: 15px 18px; border: 0; border-radius: 15px;
+      color: white; text-decoration: none; text-transform: uppercase;
+      font-size: 14px; font-weight: 900; letter-spacing: .035em;
+      background: linear-gradient(100deg, #e91e4d, #ff438b);
+      box-shadow: 0 10px 28px rgba(255,49,92,.25);
+      transition: transform .18s ease, filter .18s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .cta:active { transform: scale(.985); filter: brightness(1.08); }
+    .cta:focus-visible, a:focus-visible, button:focus-visible { outline: 3px solid white; outline-offset: 4px; }
+    .note { margin: 15px 0 0; color: #a99aa7; font-size: 11px; line-height: 1.5; }
+    .age { margin-top: 18px; color: #d7c8d3; font-size: 12px; font-weight: 700; }
+    .age strong { color: #ff78b8; }
+    footer { margin: 15px 8px 0; color: #827783; font-size: 10px; line-height: 1.5; text-align: center; }
+    .age-gate {
+      position: fixed; inset: 0; z-index: 5; display: grid; place-items: center;
+      padding: 20px; background: rgba(5,4,7,.94); backdrop-filter: blur(10px);
+    }
+    .age-box {
+      width: min(100%, 390px); padding: 26px; border-radius: 20px; text-align: center;
+      background: #17111b; border: 1px solid rgba(255,77,166,.3);
+      box-shadow: 0 20px 70px #0009;
+    }
+    .age-box h2 { margin: 0 0 10px; font-size: 24px; }
+    .age-box p { color: var(--muted); font-size: 14px; line-height: 1.5; }
+    .gate-actions { display: grid; gap: 10px; margin-top: 20px; }
+    .gate-actions button {
+      min-height: 48px; border: 0; border-radius: 12px; padding: 12px;
+      font: inherit; font-weight: 800; cursor: pointer;
+    }
+    .yes { color: white; background: linear-gradient(100deg, #e91e4d, #ff438b); }
+    .no { color: #e6dce5; background: #302633; }
+    [hidden] { display: none !important; }
+    @media (prefers-reduced-motion: no-preference) {
+      .cta { animation: glow 2.8s ease-in-out infinite; }
+      @keyframes glow { 50% { box-shadow: 0 10px 34px rgba(255,49,92,.42); } }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="card" aria-labelledby="headline">
+      <span class="tag">🔞 COMUNIDADE PARA ADULTOS</span>
+      <div class="symbol" aria-hidden="true">🔥</div>
+      <h1 id="headline">CONHEÇA NOSSA <span class="accent">COMUNIDADE EXCLUSIVA</span></h1>
+      <p class="intro">Um espaço para adultos conhecerem a comunidade e conferirem as informações antes de entrar. Acesse pelo Telegram se fizer sentido para você.</p>
+
+      <div class="benefits" aria-label="Informações da comunidade">
+        <div class="benefit"><span class="check">✓</span><span>Conteúdo e novidades conforme a descrição do grupo.</span></div>
+        <div class="benefit"><span class="check">✓</span><span>Acesso direto pelo aplicativo Telegram.</span></div>
+        <div class="benefit"><span class="check">✓</span><span>Entrada voluntária e possibilidade de sair quando quiser.</span></div>
+      </div>
+
+      <a class="cta" id="telegramCta" href="#" rel="noopener">
+        <span aria-hidden="true">✈</span> ACESSAR GRUPO NO TELEGRAM
+      </a>
+      <p class="note">Ao continuar, você abrirá o Telegram e poderá revisar as informações do grupo antes de participar.</p>
+      <p class="age"><strong>18+</strong> · Conteúdo destinado exclusivamente a adultos.</p>
+    </section>
+    <footer>Respeite sua privacidade. Não compartilhe dados pessoais com desconhecidos.</footer>
+  </main>
+
+  <section class="age-gate" id="ageGate" role="dialog" aria-modal="true" aria-labelledby="ageTitle">
+    <div class="age-box">
+      <div class="symbol" aria-hidden="true">🔞</div>
+      <h2 id="ageTitle">Você tem 18 anos ou mais?</h2>
+      <p>Esta página é destinada exclusivamente a pessoas adultas. Confirme sua idade para continuar.</p>
+      <div class="gate-actions">
+        <button class="yes" id="confirmAge" type="button">SIM, TENHO 18 ANOS OU MAIS</button>
+        <button class="no" id="leavePage" type="button">NÃO, SAIR</button>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // CONFIGURAÇÃO: substitua pelo link de convite do seu grupo/canal.
+    const TELEGRAM_URL = "https://t.me/+1OPDnr20DPUxNDkx";
+
+    // Opcional: informe o ID do TikTok Pixel. Deixe vazio para desativar.
+    const TIKTOK_PIXEL_ID = "";
+
+    const cta = document.getElementById("telegramCta");
+    const gate = document.getElementById("ageGate");
+
+    // Configure o link no próprio botão e valide antes de redirecionar.
+    cta.addEventListener("click", function (event) {
+      event.preventDefault();
+
+      if (!/^https:\/\/t\.me\/[A-Za-z0-9_+/?=-]+$/.test(TELEGRAM_URL) ||
+          TELEGRAM_URL.includes("SEU_LINK_AQUI")) {
+        alert("Configure o link de convite do Telegram no código antes de publicar.");
+        return;
+      }
+
+      if (window.ttq && typeof window.ttq.track === "function") {
+        window.ttq.track("Contact", { content_type: "telegram_group" });
+      }
+      window.location.href = TELEGRAM_URL;
+    });
+
+    document.getElementById("confirmAge").addEventListener("click", function () {
+      gate.hidden = true;
+    });
+
+    document.getElementById("leavePage").addEventListener("click", function () {
+      window.location.replace("https://www.google.com/");
+    });
+
+    // Pixel opcional: carregado somente quando um ID real for configurado.
+    if (TIKTOK_PIXEL_ID.trim()) {
+      !function (w, d, t) {
+        w.TiktokAnalyticsObject = t;
+        const ttq = w[t] = w[t] || [];
+        ttq.methods = ["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"];
+        ttq.setAndDefer = function (obj, method) {
+          obj[method] = function () { obj.push([method].concat(Array.prototype.slice.call(arguments, 0))); };
+        };
+        for (let i = 0; i < ttq.methods.length; i++) ttq.setAndDefer(ttq, ttq.methods[i]);
+        ttq.load = function (id) {
+          const script = d.createElement("script");
+          script.async = true;
+          script.src = "https://analytics.tiktok.com/i18n/pixel/events.js?sdkid=" + id + "&lib=" + t;
+          const first = d.getElementsByTagName("script")[0];
+          first.parentNode.insertBefore(script, first);
+          ttq._i = ttq._i || {};
+          ttq._i[id] = [];
+          ttq._i[id]._u = "https://analytics.tiktok.com/i18n/pixel/events.js";
+          ttq._t = ttq._t || {};
+          ttq._t[id] = Date.now();
+        };
+        ttq.load(TIKTOK_PIXEL_ID);
+        ttq.page();
+      }(window, document, "ttq");
+    }
+  </script>
+</body>
+</html>
